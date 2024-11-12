@@ -6,8 +6,9 @@ tmux new-session -d -s session_new
 #create 1st window for nvim 
 tmux rename-window -t session_new:0 'editor'
 tmux send-keys -t session_new:0 "source ./venv/bin/activate" C-m
+tmux send-keys -t session_new:0 "export OPENAI_API_KEY=$(<~/.openai_api_key_nvim)" C-m
 tmux send-keys -t session_new:0 "clear" C-m
- 
+
 #create 2nd window for running etc
 tmux new-window -t session_new:1 -n 'server'
 tmux send-keys -t session_new:1 "source ./venv/bin/activate" C-m

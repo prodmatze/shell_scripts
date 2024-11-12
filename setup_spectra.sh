@@ -7,6 +7,7 @@ tmux new-session -d -s session_spectra
 tmux rename-window -t session_spectra:0 'editor'
 tmux send-keys -t session_spectra:0 'cd ~/projects/spectra-ai' C-m
 tmux send-keys -t session_spectra:0 "source ./venv/bin/activate" C-m
+tmux send-keys -t session_spectra:0 "export OPENAI_API_KEY=$(<~/.openai_api_key_nvim)" C-m
 tmux send-keys -t session_spectra:0 "clear" C-m 
 
  
